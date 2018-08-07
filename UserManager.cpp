@@ -89,9 +89,11 @@ void UserManager::logIn() {
 
         cout << "Please enter your username: ";
         string username;
-        do {
-            getline(cin, username);
-        } while (checkUserName(username) == false);
+        getline(cin, username);
+        if(!checkUserName(username))
+        {
+            return;
+        }
 
         string password;
         cout << "Please enter your password: ";
